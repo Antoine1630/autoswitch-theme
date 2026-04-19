@@ -50,7 +50,7 @@ $is_front = is_front_page();
       </ul>
     <?php endif; ?>
 
-    <a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>" class="nav-cta">Prendre contact →</a>
+    <a href="<?php echo esc_url( autoswitch_mod( 'nav_cta_url', home_url( '/#contact' ) ) ); ?>" class="nav-cta"><?php echo esc_html( autoswitch_mod( 'nav_cta_label', 'Prendre contact →' ) ); ?></a>
     <button class="hamburger" id="hamburger" aria-label="<?php esc_attr_e( 'Menu', 'autoswitch' ); ?>">
       <span></span><span></span><span></span>
     </button>

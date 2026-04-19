@@ -17,7 +17,7 @@ $hours     = autoswitch_mod( 'hours', 'Lun — Sam · 9h — 19h' );
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-wrap">
           <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo-light.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" style="height:54px;width:auto;display:block;"/>
         </a>
-        <p>L'agence qui prend soin de votre voiture comme si c'était la sienne. Mandataire automobile, service clé en main, réseau national.</p>
+        <p><?php echo esc_html( autoswitch_mod( 'footer_tagline', "L'agence qui prend soin de votre voiture comme si c'était la sienne. Mandataire automobile, service clé en main, réseau national." ) ); ?></p>
       </div>
       <div class="foot-col">
         <h5>Menu</h5>
@@ -45,22 +45,32 @@ $hours     = autoswitch_mod( 'hours', 'Lun — Sam · 9h — 19h' );
           <li><a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></li>
           <li><a href="tel:+<?php echo esc_attr( $phone_raw ); ?>"><?php echo esc_html( $phone ); ?></a></li>
           <li><?php echo esc_html( $hours ); ?></li>
-          <li>France entière</li>
+          <li><?php echo esc_html( autoswitch_mod( 'footer_zone_label', 'France entière' ) ); ?></li>
         </ul>
       </div>
       <div class="foot-col">
         <h5>Légal</h5>
         <ul>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">CGV</a></li>
-          <li><a href="#">Cookies</a></li>
+          <?php
+          $legal_defaults = array(
+              array( 'Mentions légales',             '#' ),
+              array( 'Politique de confidentialité', '#' ),
+              array( 'CGV',                          '#' ),
+              array( 'Cookies',                      '#' ),
+          );
+          foreach ( $legal_defaults as $i => $l ) :
+            $n     = $i + 1;
+            $label = autoswitch_mod( "footer_legal_{$n}_label", $l[0] );
+            $url   = autoswitch_mod( "footer_legal_{$n}_url",   $l[1] );
+          ?>
+            <li><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $label ); ?></a></li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> — Agence automobile. Tous droits réservés.</span>
-      <span>Site conçu avec soin ·</span>
+      <span><?php echo esc_html( autoswitch_mod( 'footer_bottom', 'Site conçu avec soin ·' ) ); ?></span>
     </div>
   </div>
 </footer>

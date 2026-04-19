@@ -66,100 +66,29 @@ function autoswitch_scripts() {
 add_action( 'wp_enqueue_scripts', 'autoswitch_scripts' );
 
 /**
- * Customizer — champs éditables depuis Apparence > Personnaliser
+ * Customizer — tout le contenu éditable de la home est défini dans inc/customizer.php
  */
-function autoswitch_customize_register( $wp_customize ) {
-
-    // === SECTION CONTACT ===
-    $wp_customize->add_section( 'autoswitch_contact', array(
-        'title'    => __( 'Autoswitch — Contact', 'autoswitch' ),
-        'priority' => 30,
-    ) );
-
-    $fields = array(
-        'phone'         => array( 'label' => 'Téléphone (affiché)', 'default' => '+33 6 XX XX XX XX' ),
-        'phone_raw'     => array( 'label' => 'Téléphone (lien tel:/wa.me, chiffres uniquement)', 'default' => '33600000000' ),
-        'email'         => array( 'label' => 'Email', 'default' => 'contact@autoswitch.fr' ),
-        'zone'          => array( 'label' => "Zone d'intervention", 'default' => 'France entière · Déplacement possible' ),
-        'hours'         => array( 'label' => 'Horaires', 'default' => 'Lun — Sam · 9h — 19h' ),
-    );
-
-    foreach ( $fields as $key => $meta ) {
-        $wp_customize->add_setting( 'autoswitch_' . $key, array(
-            'default'           => $meta['default'],
-            'sanitize_callback' => 'sanitize_text_field',
-            'transport'         => 'refresh',
-        ) );
-        $wp_customize->add_control( 'autoswitch_' . $key, array(
-            'label'   => $meta['label'],
-            'section' => 'autoswitch_contact',
-            'type'    => 'text',
-        ) );
-    }
-
-    // === SECTION HERO ===
-    $wp_customize->add_section( 'autoswitch_hero', array(
-        'title'    => __( 'Autoswitch — Hero', 'autoswitch' ),
-        'priority' => 31,
-    ) );
-
-    $hero_fields = array(
-        'hero_kicker_1' => array( 'label' => 'Meta 1', 'default' => 'Agence automobile' ),
-        'hero_kicker_2' => array( 'label' => 'Meta 2', 'default' => 'Mandataire expert' ),
-        'hero_kicker_3' => array( 'label' => 'Meta 3', 'default' => 'France entière' ),
-        'hero_title'    => array( 'label' => 'Titre (HTML autorisé — <em>, <br/>)', 'default' => "L'agence qui <em>vend votre voiture</em><br/>au meilleur prix, pendant que vous<br/>vaquez à l'essentiel." ),
-        'hero_cta_1'    => array( 'label' => 'Bouton principal', 'default' => 'Estimer mon véhicule' ),
-        'hero_cta_2'    => array( 'label' => 'Bouton secondaire', 'default' => 'Voir notre méthode' ),
-    );
-
-    foreach ( $hero_fields as $key => $meta ) {
-        $wp_customize->add_setting( 'autoswitch_' . $key, array(
-            'default'           => $meta['default'],
-            'sanitize_callback' => 'wp_kses_post',
-            'transport'         => 'refresh',
-        ) );
-        $wp_customize->add_control( 'autoswitch_' . $key, array(
-            'label'   => $meta['label'],
-            'section' => 'autoswitch_hero',
-            'type'    => $key === 'hero_title' ? 'textarea' : 'text',
-        ) );
-    }
-
-    // === SECTION INTRO / STATS ===
-    $wp_customize->add_section( 'autoswitch_stats', array(
-        'title'    => __( 'Autoswitch — Statistiques', 'autoswitch' ),
-        'priority' => 32,
-    ) );
-
-    $stat_fields = array(
-        'stat_1_num'   => '+250',
-        'stat_1_label' => 'Véhicules vendus',
-        'stat_2_num'   => '21<span>j</span>',
-        'stat_2_label' => 'Délai moyen',
-        'stat_3_num'   => '96<span>%</span>',
-        'stat_3_label' => 'Satisfaction',
-    );
-
-    foreach ( $stat_fields as $key => $default ) {
-        $wp_customize->add_setting( 'autoswitch_' . $key, array(
-            'default'           => $default,
-            'sanitize_callback' => 'wp_kses_post',
-            'transport'         => 'refresh',
-        ) );
-        $wp_customize->add_control( 'autoswitch_' . $key, array(
-            'label'   => ucfirst( str_replace( '_', ' ', $key ) ),
-            'section' => 'autoswitch_stats',
-            'type'    => 'text',
-        ) );
-    }
-}
-add_action( 'customize_register', 'autoswitch_customize_register' );
+require_once get_template_directory() . '/inc/customizer.php';
 
 /**
  * Helper pour récupérer un mod avec défaut
  */
 function autoswitch_mod( $key, $default = '' ) {
     return get_theme_mod( 'autoswitch_' . $key, $default );
+}
+
+/**
+ * Helper : retourne une URL d'image Customizer avec fallback vers un asset local
+ */
+function autoswitch_image( $key, $fallback_asset = '' ) {
+    $url = autoswitch_mod( $key, '' );
+    if ( ! empty( $url ) ) {
+        return $url;
+    }
+    if ( ! empty( $fallback_asset ) ) {
+        return get_template_directory_uri() . '/assets/' . ltrim( $fallback_asset, '/' );
+    }
+    return '';
 }
 
 /**

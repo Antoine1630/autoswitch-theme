@@ -16,7 +16,7 @@ $zone         = autoswitch_mod( 'zone', "France entière · Déplacement possibl
 $hours        = autoswitch_mod( 'hours', 'Lun — Sam · 9h — 19h' );
 
 // Hero
-$hero_img     = autoswitch_image( 'hero_image', 'hero.jpg' );
+$hero_img     = autoswitch_image( 'hero_image', 'photos/hero.jpg' );
 $hero_title   = autoswitch_mod( 'hero_title', "L'agence qui <em>vend votre voiture</em><br/>au meilleur prix, pendant que vous<br/>vaquez à l'essentiel." );
 $hero_k1      = autoswitch_mod( 'hero_kicker_1', 'Agence automobile' );
 $hero_k2      = autoswitch_mod( 'hero_kicker_2', 'Mandataire expert' );
@@ -90,7 +90,7 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
         </div>
       </div>
       <div class="intro-image reveal">
-        <img src="<?php echo esc_url( autoswitch_image( 'intro_image', 'car-01.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Véhicule confié à Autoswitch', 'autoswitch' ); ?>" loading="lazy"/>
+        <img src="<?php echo esc_url( autoswitch_image( 'intro_image', 'photos/intro.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Véhicule confié à Autoswitch', 'autoswitch' ); ?>" loading="lazy"/>
         <div class="intro-image-label">
           <strong><?php echo esc_html( autoswitch_mod( 'intro_label_strong', 'Une voiture mérite son acheteur.' ) ); ?></strong>
           <?php echo esc_html( autoswitch_mod( 'intro_label_text', 'Nous le trouvons pour vous.' ) ); ?>
@@ -175,7 +175,7 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
   <div class="container">
     <div class="feature-row">
       <div class="feature-img-wrap reveal">
-        <img src="<?php echo esc_url( autoswitch_image( 'feature_image', 'feature.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Véhicule mis en valeur par Autoswitch', 'autoswitch' ); ?>" loading="lazy"/>
+        <img src="<?php echo esc_url( autoswitch_image( 'feature_image', 'photos/feature.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Véhicule mis en valeur par Autoswitch', 'autoswitch' ); ?>" loading="lazy"/>
         <div class="feature-sticker">
           <strong><?php echo esc_html( autoswitch_mod( 'feature_sticker_num', '+8%' ) ); ?></strong>
           <?php echo esc_html( autoswitch_mod( 'feature_sticker_text', 'Prix moyen vs vente solo' ) ); ?>
@@ -228,12 +228,12 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
     <div class="gallery-scroll">
       <?php
       $gallery_defaults = array(
-          array( 'car-01.jpg', 'Ferrari Purosangue', 'V12 — 2024' ),
-          array( 'car-02.jpg', 'Grand tourisme',     'Édition 2024' ),
-          array( 'car-03.jpg', 'Profil éditorial',   'Shooting studio' ),
-          array( 'car-04.jpg', 'Détail mécanique',   'Full service historique' ),
-          array( 'car-05.jpg', 'Finition premium',   'Intérieur conservé' ),
-          array( 'detail.jpg', 'Exposition face',    'Mise en valeur' ),
+          array( 'photos/gallery-01.jpg', 'Ferrari Purosangue',  'V12 — 2024' ),
+          array( 'photos/gallery-02.jpg', 'Porsche GT3 RS',      'Édition 2024' ),
+          array( 'photos/gallery-03.jpg', 'Prestige sur-mesure', 'Cannes — 2024' ),
+          array( 'photos/gallery-04.jpg', 'Détail mécanique',    'Full service historique' ),
+          array( 'photos/gallery-05.jpg', 'Finition premium',    'Intérieur conservé' ),
+          array( 'photos/gallery-06.jpg', 'Exposition face',     'Mise en valeur' ),
       );
       foreach ( $gallery_defaults as $i => $g ) :
         $n   = $i + 1;

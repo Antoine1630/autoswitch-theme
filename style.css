@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -130,37 +130,41 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   max-width: 1240px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
   gap: 28px;
-  padding: 12px 20px 12px 24px;
+  padding: 10px 18px 10px 22px;
   border-radius: 999px;
-  background: rgba(250, 246, 240, 0.86);
-  backdrop-filter: saturate(170%) blur(18px);
-  -webkit-backdrop-filter: saturate(170%) blur(18px);
-  border: 1px solid var(--line);
-  box-shadow: 0 6px 24px -14px rgba(26, 22, 18, 0.18),
-              0 2px 8px -4px rgba(26, 22, 18, 0.08);
-  transition: background .35s var(--ease-out),
-              border-color .35s var(--ease-out),
-              box-shadow .35s var(--ease-out);
+  background: rgba(250, 246, 240, 0.28);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  transition: background .4s var(--ease-out),
+              border-color .4s var(--ease-out),
+              box-shadow .4s var(--ease-out);
   pointer-events: auto;
 }
 
-/* Sur le hero : pilule crème légèrement translucide, reste lisible */
+/* Sur le hero : glass très discret, on laisse transparaître l'image */
 .nav.on-hero .nav-inner {
-  background: rgba(250, 246, 240, 0.78);
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 10px 32px -16px rgba(0, 0, 0, 0.35),
-              0 2px 8px -4px rgba(0, 0, 0, 0.18);
+  background: rgba(26, 22, 18, 0.18);
+  border-color: rgba(255, 255, 255, 0.12);
 }
+
+/* Au scroll (fond clair) : glass crème subtil, juste une ligne de démarcation */
 .nav.scrolled .nav-inner {
-  background: rgba(250, 246, 240, 0.92);
+  background: rgba(250, 246, 240, 0.55);
+  border-color: var(--line-soft);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset,
+              0 4px 18px -14px rgba(26, 22, 18, 0.12);
 }
 
 /* Logo — légèrement plus grand, mieux repérable */
 .logo-wrap { display: inline-flex; align-items: center; flex-shrink: 0; }
 .logo-img { height: 36px; width: auto; display: block; transition: opacity .3s, filter .3s; }
 .logo-img-light { display: none; }
-/* Dans la pilule crème, on utilise toujours le logo sombre */
 .logo-img-dark  { display: block; }
+/* Sur le hero (glass sombre), bascule sur le logo clair */
+.nav.on-hero .logo-img-dark  { display: none; }
+.nav.on-hero .logo-img-light { display: block; }
 
 /* Override WordPress custom-logo size */
 .custom-logo { max-height: 36px !important; width: auto !important; }
@@ -186,6 +190,12 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .nav-link:hover, .nav-links a:hover { color: var(--accent); }
 .nav-link:hover::after, .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 
+/* Sur le hero (glass foncé) : texte clair */
+.nav.on-hero .nav-link,
+.nav.on-hero .nav-links a { color: rgba(255, 255, 255, 0.94); }
+.nav.on-hero .nav-link:hover,
+.nav.on-hero .nav-links a:hover { color: var(--accent-soft); }
+
 /* Nav CTA — accent cognac pour mieux ressortir */
 .nav-cta {
   padding: 10px 20px;
@@ -203,6 +213,17 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   background: var(--accent); color: var(--white);
   border-color: var(--accent);
   transform: translateY(-1px);
+}
+/* Sur le hero : CTA translucide, liseré clair */
+.nav.on-hero .nav-cta {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(6px);
+}
+.nav.on-hero .nav-cta:hover {
+  background: var(--accent); color: var(--white);
+  border-color: var(--accent);
 }
 
 /* Hamburger */

@@ -102,3 +102,67 @@ function autoswitch_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'autoswitch_body_classes' );
+
+/**
+ * Maintenance mode — affiche une page "en préparation" à tous sauf admins connectés.
+ * Pour désactiver : supprimer ce bloc ou commenter la ligne add_action ci-dessous.
+ */
+function autoswitch_maintenance_gate() {
+    if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) { return; }
+    if ( defined( 'WP_CLI' ) && WP_CLI ) { return; }
+    if ( $GLOBALS['pagenow'] === 'wp-login.php' ) { return; }
+
+    status_header( 503 );
+    header( 'Retry-After: 3600' );
+    header( 'Content-Type: text/html; charset=utf-8' );
+
+    $logo_id  = get_theme_mod( 'custom_logo' );
+    $logo_src = $logo_id ? wp_get_attachment_image_src( $logo_id, 'full' ) : null;
+    $logo_url = $logo_src ? esc_url( $logo_src[0] ) : '';
+    ?><!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Autoswitch — Site en préparation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    background: #FAF6F0; color: #1A1612;
+    font-family: 'Inter Tight', system-ui, sans-serif; font-weight: 300;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 32px;
+  }
+  .wrap { max-width: 520px; }
+  .logo { max-width: 180px; height: auto; margin-bottom: 48px; opacity: .9; }
+  h1 {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: clamp(34px, 5vw, 52px); line-height: 1.05;
+    letter-spacing: -.02em; margin: 0 0 20px;
+  }
+  h1 em { font-style: italic; color: #0F390A; }
+  p { color: #5B524A; font-size: 17px; line-height: 1.6; margin: 0; }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 999px;
+    background: #0F390A; margin: 0 6px; vertical-align: middle; opacity: .5;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <?php if ( $logo_url ) : ?>
+      <img class="logo" src="<?php echo $logo_url; ?>" alt="Autoswitch">
+    <?php endif; ?>
+    <h1>Site <em>en préparation</em></h1>
+    <p>Nous finalisons les derniers détails.<span class="dot"></span>Retour très prochainement.</p>
+  </div>
+</body>
+</html>
+    <?php
+    exit;
+}
+add_action( 'template_redirect', 'autoswitch_maintenance_gate' );

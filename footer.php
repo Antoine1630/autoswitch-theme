@@ -4,10 +4,9 @@
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-$phone_raw = autoswitch_mod( 'phone_raw', '33600000000' );
-$phone     = autoswitch_mod( 'phone', '+33 6 XX XX XX XX' );
-$email     = autoswitch_mod( 'email', 'contact@autoswitch.fr' );
-$hours     = autoswitch_mod( 'hours', 'Lun — Sam · 9h — 19h' );
+$phone_raw = autoswitch_mod( 'phone_raw', '41783294595' );
+$phone     = autoswitch_mod( 'phone', '+41 078 329 45 95' );
+$email     = autoswitch_mod( 'email', 'contact@autoswitch.ch' );
 ?>
 
 <footer class="site-footer">
@@ -44,8 +43,7 @@ $hours     = autoswitch_mod( 'hours', 'Lun — Sam · 9h — 19h' );
         <ul>
           <li><a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></li>
           <li><a href="tel:+<?php echo esc_attr( $phone_raw ); ?>"><?php echo esc_html( $phone ); ?></a></li>
-          <li><?php echo esc_html( $hours ); ?></li>
-          <li><?php echo esc_html( autoswitch_mod( 'footer_zone_label', 'France entière' ) ); ?></li>
+          <li><?php echo esc_html( autoswitch_mod( 'footer_zone_label', 'Suisse entière' ) ); ?></li>
         </ul>
       </div>
       <div class="foot-col">

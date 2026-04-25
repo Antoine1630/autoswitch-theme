@@ -9,18 +9,17 @@ get_header();
 $tpl          = get_template_directory_uri();
 
 // Coordonnées
-$phone_raw    = autoswitch_mod( 'phone_raw', '33600000000' );
-$phone        = autoswitch_mod( 'phone', '+33 6 XX XX XX XX' );
-$email        = autoswitch_mod( 'email', 'contact@autoswitch.fr' );
-$zone         = autoswitch_mod( 'zone', "France entière · Déplacement possible" );
-$hours        = autoswitch_mod( 'hours', 'Lun — Sam · 9h — 19h' );
+$phone_raw    = autoswitch_mod( 'phone_raw', '41783294595' );
+$phone        = autoswitch_mod( 'phone', '+41 078 329 45 95' );
+$email        = autoswitch_mod( 'email', 'contact@autoswitch.ch' );
+$zone         = autoswitch_mod( 'zone', "Suisse entière · Déplacement possible" );
 
 // Hero
 $hero_img     = autoswitch_image( 'hero_image', 'photos/hero.jpg' );
 $hero_title   = autoswitch_mod( 'hero_title', "L'agence qui <em>vend votre voiture</em><br/>au meilleur prix, pendant que vous<br/>vaquez à l'essentiel." );
 $hero_k1      = autoswitch_mod( 'hero_kicker_1', 'Agence automobile' );
 $hero_k2      = autoswitch_mod( 'hero_kicker_2', 'Mandataire expert' );
-$hero_k3      = autoswitch_mod( 'hero_kicker_3', 'France entière' );
+$hero_k3      = autoswitch_mod( 'hero_kicker_3', 'Suisse entière' );
 $hero_cta1    = autoswitch_mod( 'hero_cta_1', 'Estimer mon véhicule' );
 $hero_cta1_u  = autoswitch_mod( 'hero_cta_1_url', '#contact' );
 $hero_cta2    = autoswitch_mod( 'hero_cta_2', 'Voir notre méthode' );
@@ -348,13 +347,6 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
               <div class="channel-value"><?php echo esc_html( $zone ); ?></div>
             </div>
           </div>
-          <div class="channel">
-            <div class="channel-ico">⏱</div>
-            <div>
-              <div class="channel-label">Disponibilités</div>
-              <div class="channel-value"><?php echo esc_html( $hours ); ?></div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="form-card reveal">
@@ -370,7 +362,7 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
               <div class="field"><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" placeholder="Jean" required/></div>
               <div class="field"><label for="nom">Nom</label><input type="text" id="nom" name="nom" placeholder="Dupont" required/></div>
             </div>
-            <div class="field"><label for="tel">Téléphone</label><input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78" required/></div>
+            <div class="field"><label for="tel">Téléphone</label><input type="tel" id="tel" name="tel" placeholder="078 329 45 95" required/></div>
             <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="jean.dupont@email.com"/></div>
             <div class="form-row">
               <div class="field"><label for="marque">Marque</label><input type="text" id="marque" name="marque" placeholder="ex. Ferrari"/></div>

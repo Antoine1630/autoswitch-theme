@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.2.4
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -15,30 +15,30 @@ Tags: business, one-column, custom-colors, custom-logo, custom-menu, featured-im
    DESIGN TOKENS
    =================================================== */
 :root {
-  /* Warm cream palette */
-  --bg:         #FAF6F0;
-  --bg-alt:     #F2ECE1;
-  --bg-deep:    #E8DCC5;
-  --bg-dark:    #1A1612;
-  --bg-dark-alt:#211C17;
+  /* Editorial ecru palette — accordée au vert forêt #0F390A */
+  --bg:         #F4F0E2;   /* écru chaud légèrement vert-jauni, moins pêche */
+  --bg-alt:     #ECE6D3;   /* sable doux pour sections alternées */
+  --bg-deep:    #DDD3B8;   /* beige profond */
+  --bg-dark:    #14201A;   /* charbon-forêt — remplace le brun */
+  --bg-dark-alt:#1B2620;
 
-  /* Ink */
-  --ink:        #1A1612;
-  --ink-mid:    #5A4F45;
-  --ink-light:  #958975;
+  /* Ink — charbon avec sous-ton vert pour résonner avec l'accent */
+  --ink:        #14201A;
+  --ink-mid:    #545E54;
+  --ink-light:  #8B9087;
 
   /* Lines */
-  --line:       #E4D9C5;
-  --line-soft:  rgba(26,22,18,.08);
-  --line-dark:  rgba(247,240,228,.08);
+  --line:       #D9D2BD;
+  --line-soft:  rgba(20,32,26,.09);
+  --line-dark:  rgba(244,240,226,.10);
 
-  /* Accent cognac */
-  --accent:     #0F390A;
-  --accent-deep:#8A4620;
-  --accent-soft:#F3E4D4;
+  /* Accent — famille verte forêt */
+  --accent:     #0F390A;   /* hero — vert profond du logo */
+  --accent-deep:#082604;   /* hover / focus */
+  --accent-soft:#D9E3CC;   /* sage clair pour fonds, badges, highlights */
 
   --white:      #FFFFFF;
-  --cream-80:   rgba(250,246,240,.82);
+  --cream-80:   rgba(244,240,226,.82);
 
   /* Radius */
   --r-sm: 8px;
@@ -112,7 +112,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .section { padding: 120px 0; position: relative; }
 .section--tight { padding: 96px 0; }
 .section--alt  { background: var(--bg-alt); }
-.section--dark { background: var(--bg-dark); color: #E8DCC5; }
+.section--dark { background: var(--bg-dark); color: #DDD3B8; }
 
 /* ===================================================
    NAV (pilule flottante, plus basse, plus lisible)
@@ -132,7 +132,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   gap: 28px;
   padding: 10px 18px 10px 22px;
   border-radius: 999px;
-  background: rgba(250, 246, 240, 0.28);
+  background: rgba(244, 240, 226, 0.28);
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -145,16 +145,16 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 
 /* Sur le hero : glass très discret, on laisse transparaître l'image */
 .nav.on-hero .nav-inner {
-  background: rgba(26, 22, 18, 0.18);
+  background: rgba(20, 32, 26, 0.22);
   border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Au scroll (fond clair) : glass crème subtil, juste une ligne de démarcation */
 .nav.scrolled .nav-inner {
-  background: rgba(250, 246, 240, 0.55);
+  background: rgba(244, 240, 226, 0.55);
   border-color: var(--line-soft);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset,
-              0 4px 18px -14px rgba(26, 22, 18, 0.12);
+              0 4px 18px -14px rgba(20, 32, 26, 0.12);
 }
 
 /* Logo — légèrement plus grand, mieux repérable */
@@ -196,7 +196,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .nav.on-hero .nav-link:hover,
 .nav.on-hero .nav-links a:hover { color: var(--accent-soft); }
 
-/* Nav CTA — accent cognac pour mieux ressortir */
+/* Nav CTA — pilule sombre, hover en accent vert */
 .nav-cta {
   padding: 10px 20px;
   border-radius: 999px;
@@ -291,7 +291,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   margin-bottom: 40px;
 }
 .hero-title em {
-  font-style: italic; color: #EADFC9;
+  font-style: italic; color: #E5DEC5;
   letter-spacing: -.02em;
 }
 
@@ -332,7 +332,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .btn-primary:hover {
   background: var(--accent); color: var(--white);
-  transform: translateY(-2px); box-shadow: 0 10px 30px rgba(194,106,61,.35);
+  transform: translateY(-2px); box-shadow: 0 12px 32px rgba(15,57,10,.32);
 }
 .btn-ghost {
   background: transparent; color: var(--white);
@@ -344,7 +344,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .btn-dark:hover {
   background: var(--accent); transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(194,106,61,.3);
+  box-shadow: 0 12px 30px rgba(15,57,10,.30);
 }
 
 .hero-scroll {
@@ -412,7 +412,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .intro-image:hover img { transform: scale(1.05); }
 .intro-image-label {
   position: absolute; bottom: 20px; left: 20px;
-  background: rgba(250,246,240,.95); backdrop-filter: blur(10px);
+  background: rgba(244,240,226,.95); backdrop-filter: blur(10px);
   padding: 14px 18px; border-radius: var(--r-sm);
   font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink);
 }
@@ -476,7 +476,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
    PROCESS
    =================================================== */
 .process-head { text-align: center; margin-bottom: 72px; }
-.process-head .section-title { color: #EADFC9; }
+.process-head .section-title { color: #E5DEC5; }
 .process-head .eyebrow { color: var(--accent); }
 .process-head .eyebrow::before { background: var(--accent); }
 .process-head p {
@@ -501,7 +501,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .step h4 {
   font-family: 'Instrument Serif', serif; font-weight: 400;
-  font-size: 1.35rem; color: #EADFC9; margin-bottom: 12px; letter-spacing: -.015em;
+  font-size: 1.35rem; color: #E5DEC5; margin-bottom: 12px; letter-spacing: -.015em;
 }
 .step p { font-size: .88rem; color: rgba(234,223,201,.62); line-height: 1.65; }
 
@@ -598,7 +598,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .t-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(26,22,18,.08);
+  box-shadow: 0 20px 50px rgba(20,32,26,.08);
 }
 .t-card::before {
   content: '"'; position: absolute; top: 14px; left: 22px;
@@ -657,9 +657,9 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 /* ===================================================
    CONTACT
    =================================================== */
-.contact { background: var(--bg-dark); color: #EADFC9; }
+.contact { background: var(--bg-dark); color: #E5DEC5; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
-.contact-left .section-title { color: #EADFC9; }
+.contact-left .section-title { color: #E5DEC5; }
 .contact-left .eyebrow { color: var(--accent); }
 .contact-left .eyebrow::before { background: var(--accent); }
 .contact-left > p {
@@ -669,23 +669,23 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .contact-channels { display: flex; flex-direction: column; gap: 22px; }
 .channel {
   display: grid; grid-template-columns: 48px 1fr; gap: 18px;
-  padding: 16px 0; border-top: 1px solid rgba(234,223,201,.1);
+  padding: 16px 0; border-top: 1px solid rgba(229,222,197,.10);
   align-items: center;
 }
-.channel:last-child { border-bottom: 1px solid rgba(234,223,201,.1); }
+.channel:last-child { border-bottom: 1px solid rgba(229,222,197,.10); }
 .channel-ico {
   width: 44px; height: 44px;
-  background: rgba(194,106,61,.14); color: var(--accent);
+  background: rgba(217,227,204,.14); color: var(--accent-soft);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem;
 }
 .channel-label {
   font-size: .66rem; letter-spacing: .22em; text-transform: uppercase;
-  color: rgba(234,223,201,.5); margin-bottom: 3px;
+  color: rgba(229,222,197,.55); margin-bottom: 3px;
 }
 .channel-value {
   font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.15rem;
-  color: #EADFC9; letter-spacing: -.01em;
+  color: #E5DEC5; letter-spacing: -.01em;
 }
 
 /* Form card */
@@ -721,7 +721,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   transition: all .3s var(--ease-out);
 }
-.submit-btn:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(194,106,61,.3); }
+.submit-btn:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15,57,10,.32); }
 .form-note { font-size: .72rem; color: var(--ink-light); text-align: center; margin-top: 14px; }
 #form-success {
   display: none; background: var(--accent-soft); color: var(--accent-deep);
@@ -740,7 +740,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .cta-band::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 50% 120%, rgba(194,106,61,.15), transparent 60%);
+  background: radial-gradient(circle at 50% 120%, rgba(15,57,10,.18), transparent 60%);
   pointer-events: none;
 }
 .cta-band h2 {
@@ -766,7 +766,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .foot-col h5 {
   font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
-  color: #EADFC9; margin-bottom: 18px; font-weight: 600;
+  color: #E5DEC5; margin-bottom: 18px; font-weight: 600;
 }
 .foot-col ul { list-style: none; }
 .foot-col li { margin-bottom: 11px; }
@@ -774,14 +774,14 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   font-size: .89rem; color: rgba(234,223,201,.55);
   transition: color .25s var(--ease-out);
 }
-.foot-col a:hover { color: #EADFC9; }
+.foot-col a:hover { color: #E5DEC5; }
 .foot-bottom {
   border-top: 1px solid rgba(234,223,201,.08); padding-top: 26px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
   font-size: .78rem; color: rgba(234,223,201,.42);
 }
 .foot-bottom a { color: rgba(234,223,201,.42); }
-.foot-bottom a:hover { color: #EADFC9; }
+.foot-bottom a:hover { color: #E5DEC5; }
 
 /* ===================================================
    FLOAT CTA
@@ -793,12 +793,12 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .float-btn {
   width: 52px; height: 52px; background: var(--ink); color: var(--bg);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; box-shadow: 0 6px 22px rgba(26,22,18,.35);
+  font-size: 1.2rem; box-shadow: 0 6px 22px rgba(20,32,26,.35);
   transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
 }
 .float-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(26,22,18,.45);
+  box-shadow: 0 12px 28px rgba(20,32,26,.45);
 }
 .float-btn.whatsapp {
   background: #25D366;

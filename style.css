@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.5.0
+Version: 1.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -36,7 +36,7 @@ Tags: business, one-column, custom-colors, custom-logo, custom-menu, featured-im
   --accent:     #0F390A;   /* hero — vert profond du logo (FONDS) */
   --accent-deep:#082604;   /* hover / focus */
   --accent-soft:#D9E3CC;   /* sage clair pour fonds, badges, highlights */
-  --accent-text:#D4C28A;   /* champagne — texte d'accent (eyebrows, italiques, hovers) */
+  --accent-text:#0F390A;   /* vert forêt — texte d'accent (eyebrows, italiques, hovers) sur fond clair */
 
   --white:      #FFFFFF;
   --cream-80:   rgba(244,240,226,.82);

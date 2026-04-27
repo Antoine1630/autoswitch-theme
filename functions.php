@@ -56,6 +56,7 @@ function autoswitch_scripts() {
     );
 
     // Inline overrides — force palette même si Safari cache l'ancien CSS
+    // Tous les accents texte/décoration en champagne #D4C28A (couleur extraite de la carte engagement)
     $inline_css = '
         .section--dark{background:#0F390A!important;color:#E5DEC5!important;}
         .contact{background:#0F390A!important;color:#E5DEC5!important;}
@@ -68,6 +69,16 @@ function autoswitch_scripts() {
         .contact-left .section-title em{color:#D4C28A!important;}
         .section--dark .eyebrow::before,
         .contact-left .eyebrow::before{background:#D4C28A!important;}
+        /* Sur fond crème : tous les accents texte en champagne aussi */
+        .eyebrow{color:#D4C28A!important;}
+        .eyebrow::before{background:#D4C28A!important;}
+        h1 em, h2 em, h3 em, .section-title em, .cta-band em{color:#D4C28A!important;}
+        .stat-item .num span,
+        .service-num,
+        .feature-sticker strong,
+        .feat-ico,
+        .intro-image-label strong,
+        .t-stars{color:#D4C28A!important;}
     ';
     wp_add_inline_style( 'autoswitch-style', $inline_css );
 

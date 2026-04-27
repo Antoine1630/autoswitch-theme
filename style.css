@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.4.4
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -33,9 +33,10 @@ Tags: business, one-column, custom-colors, custom-logo, custom-menu, featured-im
   --line-dark:  rgba(244,240,226,.10);
 
   /* Accent — famille verte forêt */
-  --accent:     #0F390A;   /* hero — vert profond du logo */
+  --accent:     #0F390A;   /* hero — vert profond du logo (FONDS) */
   --accent-deep:#082604;   /* hover / focus */
   --accent-soft:#D9E3CC;   /* sage clair pour fonds, badges, highlights */
+  --accent-text:#D4C28A;   /* champagne — texte d'accent (eyebrows, italiques, hovers) */
 
   --white:      #FFFFFF;
   --cream-80:   rgba(244,240,226,.82);
@@ -91,17 +92,17 @@ button { font-family: inherit; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: .7rem; font-weight: 600; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--accent);
+  text-transform: uppercase; color: var(--accent-text);
   margin-bottom: 22px;
 }
-.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
+.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--accent-text); }
 
 /* Serif italic accent for headings */
 h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   font-family: 'Instrument Serif', 'Fraunces', serif;
   font-style: italic;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--accent-text);
   letter-spacing: -.01em;
 }
 
@@ -190,11 +191,11 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .nav-link::after, .nav-links a::after {
   content: ''; position: absolute; left: 0; bottom: 2px;
-  width: 100%; height: 1.5px; background: var(--accent);
+  width: 100%; height: 1.5px; background: var(--accent-text);
   transform: scaleX(0); transform-origin: right;
   transition: transform .4s var(--ease-out);
 }
-.nav-link:hover, .nav-links a:hover { color: var(--accent); }
+.nav-link:hover, .nav-links a:hover { color: var(--accent-text); }
 .nav-link:hover::after, .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 
 /* Sur le hero (glass foncé) : texte clair */
@@ -403,7 +404,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   letter-spacing: -.025em; color: var(--ink);
   line-height: 1; display: block;
 }
-.stat-item .num span { color: var(--accent); font-style: italic; }
+.stat-item .num span { color: var(--accent-text); font-style: italic; }
 .stat-item .label {
   font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
   color: var(--ink-light); margin-top: 10px; display: block;
@@ -426,7 +427,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .intro-image-label strong {
   display: block; font-family: 'Instrument Serif', serif;
   font-style: italic; font-weight: 400; font-size: 1.05rem;
-  letter-spacing: -.01em; text-transform: none; color: var(--accent);
+  letter-spacing: -.01em; text-transform: none; color: var(--accent-text);
   margin-bottom: 2px;
 }
 
@@ -457,7 +458,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .service:hover { background: var(--bg-alt); }
 .service-num {
   font-family: 'Instrument Serif', serif; font-style: italic;
-  font-size: 1rem; color: var(--accent); margin-bottom: 28px; opacity: .85;
+  font-size: 1rem; color: var(--accent-text); margin-bottom: 28px; opacity: .85;
 }
 .service h3 {
   font-family: 'Instrument Serif', serif; font-weight: 400;
@@ -533,7 +534,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .feature-sticker strong {
   font-family: 'Instrument Serif', serif; font-style: italic;
   font-size: 1.35rem; font-weight: 400; letter-spacing: 0;
-  text-transform: none; color: var(--accent); display: block; margin-bottom: 2px;
+  text-transform: none; color: var(--accent-text); display: block; margin-bottom: 2px;
 }
 .feature-body h2 {
   font-family: 'Instrument Serif', serif; font-weight: 400;
@@ -548,7 +549,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .feature-list li:last-child { border-bottom: 1px solid var(--line); }
 .feat-ico {
   font-family: 'Instrument Serif', serif; font-style: italic;
-  font-size: 1rem; color: var(--accent); padding-top: 3px;
+  font-size: 1rem; color: var(--accent-text); padding-top: 3px;
 }
 .feat-title { font-weight: 600; font-size: .98rem; margin-bottom: 4px; }
 .feat-desc  { font-size: .88rem; color: var(--ink-mid); line-height: 1.6; }
@@ -610,9 +611,9 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .t-card::before {
   content: '"'; position: absolute; top: 14px; left: 22px;
   font-family: 'Instrument Serif', serif; font-size: 5rem; line-height: 1;
-  color: var(--accent); opacity: .18;
+  color: var(--accent-text); opacity: .35;
 }
-.t-stars { color: var(--accent); font-size: .85rem; letter-spacing: 3px; margin-bottom: 20px; position: relative; }
+.t-stars { color: var(--accent-text); font-size: .85rem; letter-spacing: 3px; margin-bottom: 20px; position: relative; }
 .t-text {
   font-family: 'Instrument Serif', serif; font-weight: 400;
   font-size: 1.12rem; line-height: 1.5; color: var(--ink);
@@ -623,7 +624,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   padding-top: 20px; border-top: 1px solid var(--line);
 }
 .t-avatar {
-  width: 44px; height: 44px; background: var(--accent-soft); color: var(--accent);
+  width: 44px; height: 44px; background: var(--accent-soft); color: var(--accent-text);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: .9rem;
 }
@@ -644,7 +645,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   color: var(--ink); letter-spacing: -.01em;
   transition: color .25s var(--ease-out);
 }
-.faq-q:hover { color: var(--accent); }
+.faq-q:hover { color: var(--accent-text); }
 .faq-plus { flex-shrink: 0; width: 28px; height: 28px; position: relative; }
 .faq-plus::before, .faq-plus::after {
   content: ''; position: absolute; background: currentColor;
@@ -915,7 +916,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
   color: var(--ink); margin: 40px 0 16px; letter-spacing: -.02em;
 }
 .page-generic p { margin-bottom: 20px; }
-.page-generic a { color: var(--accent); border-bottom: 1px solid var(--accent); }
+.page-generic a { color: var(--accent-text); border-bottom: 1px solid var(--accent-text); }
 
 /* ===================================================
    ANIMATIONS — scroll reveal system

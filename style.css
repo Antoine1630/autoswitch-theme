@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -112,15 +112,14 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .section { padding: 120px 0; position: relative; }
 .section--tight { padding: 96px 0; }
 .section--alt  { background: var(--bg-alt); }
-.section--dark { background: var(--bg-dark); color: #E5DEC5; }
+.section--dark { background: #0F390A !important; color: #E5DEC5 !important; }
 /* Sur fond vert : eyebrows et italiques en champagne (sinon invisibles) */
 .section--dark .eyebrow,
-.section--dark .eyebrow::before,
 .section--dark h1 em,
 .section--dark h2 em,
 .section--dark h3 em,
-.section--dark .section-title em { color: #D4C28A; }
-.section--dark .eyebrow::before { background: #D4C28A; }
+.section--dark .section-title em { color: #D4C28A !important; }
+.section--dark .eyebrow::before { background: #D4C28A !important; }
 
 /* ===================================================
    NAV (pilule flottante, plus basse, plus lisible)
@@ -665,12 +664,12 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 /* ===================================================
    CONTACT
    =================================================== */
-.contact { background: var(--bg-dark); color: #E5DEC5; }
+.contact { background: #0F390A !important; color: #E5DEC5 !important; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
-.contact-left .section-title { color: #E5DEC5; }
-.contact-left .section-title em { color: #D4C28A; }
-.contact-left .eyebrow { color: #D4C28A; }
-.contact-left .eyebrow::before { background: #D4C28A; }
+.contact-left .section-title { color: #E5DEC5 !important; }
+.contact-left .section-title em { color: #D4C28A !important; }
+.contact-left .eyebrow { color: #D4C28A !important; }
+.contact-left .eyebrow::before { background: #D4C28A !important; }
 .contact-left > p {
   color: rgba(234,223,201,.62); font-size: 1rem; line-height: 1.72;
   margin: 28px 0 44px; max-width: 460px;

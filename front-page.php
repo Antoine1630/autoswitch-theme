@@ -212,6 +212,27 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
   </div>
 </section>
 
+<!-- ===== COMMITMENT CARD (vert) ===== -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="commit-card reveal">
+      <div class="commit-card-bg"></div>
+      <div class="commit-card-body">
+        <div class="eyebrow"><?php echo esc_html( autoswitch_mod( 'commit_eyebrow', 'Notre engagement' ) ); ?></div>
+        <h2><?php echo wp_kses_post( autoswitch_mod( 'commit_title', 'Un seul interlocuteur,<br/><em>de A à Z.</em>' ) ); ?></h2>
+        <p><?php echo esc_html( autoswitch_mod( 'commit_desc', "Un agent dédié vous accompagne tout au long du processus. Pas de transferts, pas de répétitions, pas de zones grises — juste une promesse tenue." ) ); ?></p>
+        <a href="<?php echo esc_url( autoswitch_mod( 'commit_cta_url', '#contact' ) ); ?>" class="btn commit-btn"><?php echo esc_html( autoswitch_mod( 'commit_cta_label', 'Prendre rendez-vous' ) ); ?>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="commit-card-stat">
+        <div class="commit-num"><?php echo esc_html( autoswitch_mod( 'commit_stat_num', '96' ) ); ?><span><?php echo esc_html( autoswitch_mod( 'commit_stat_unit', '%' ) ); ?></span></div>
+        <div class="commit-lab"><?php echo esc_html( autoswitch_mod( 'commit_stat_label', 'Clients qui recommandent' ) ); ?></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== GALLERY ===== -->
 <section class="section section--tight section--alt" id="galerie">
   <div class="container">

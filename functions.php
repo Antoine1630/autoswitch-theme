@@ -55,6 +55,22 @@ function autoswitch_scripts() {
         wp_get_theme()->get( 'Version' )
     );
 
+    // Inline overrides — force palette même si Safari cache l'ancien CSS
+    $inline_css = '
+        .section--dark{background:#0F390A!important;color:#E5DEC5!important;}
+        .contact{background:#0F390A!important;color:#E5DEC5!important;}
+        .section--dark .eyebrow,
+        .section--dark h1 em,
+        .section--dark h2 em,
+        .section--dark h3 em,
+        .section--dark .section-title em,
+        .contact-left .eyebrow,
+        .contact-left .section-title em{color:#D4C28A!important;}
+        .section--dark .eyebrow::before,
+        .contact-left .eyebrow::before{background:#D4C28A!important;}
+    ';
+    wp_add_inline_style( 'autoswitch-style', $inline_css );
+
     wp_enqueue_script(
         'autoswitch-theme',
         get_template_directory_uri() . '/assets/js/theme.js',

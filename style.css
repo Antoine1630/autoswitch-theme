@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -19,8 +19,8 @@ Tags: business, one-column, custom-colors, custom-logo, custom-menu, featured-im
   --bg:         #F4F0E2;   /* écru chaud légèrement vert-jauni, moins pêche */
   --bg-alt:     #ECE6D3;   /* sable doux pour sections alternées */
   --bg-deep:    #DDD3B8;   /* beige profond */
-  --bg-dark:    #14201A;   /* charbon-forêt — remplace le brun */
-  --bg-dark-alt:#1B2620;
+  --bg-dark:    #0F390A;   /* vert forêt — surface signature unifiée */
+  --bg-dark-alt:#143E10;   /* vert légèrement plus clair pour hovers */
 
   /* Ink — charbon avec sous-ton vert pour résonner avec l'accent */
   --ink:        #14201A;
@@ -112,7 +112,15 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .section { padding: 120px 0; position: relative; }
 .section--tight { padding: 96px 0; }
 .section--alt  { background: var(--bg-alt); }
-.section--dark { background: var(--bg-dark); color: #DDD3B8; }
+.section--dark { background: var(--bg-dark); color: #E5DEC5; }
+/* Sur fond vert : eyebrows et italiques en champagne (sinon invisibles) */
+.section--dark .eyebrow,
+.section--dark .eyebrow::before,
+.section--dark h1 em,
+.section--dark h2 em,
+.section--dark h3 em,
+.section--dark .section-title em { color: #D4C28A; }
+.section--dark .eyebrow::before { background: #D4C28A; }
 
 /* ===================================================
    NAV (pilule flottante, plus basse, plus lisible)
@@ -145,7 +153,7 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 
 /* Sur le hero : glass très discret, on laisse transparaître l'image */
 .nav.on-hero .nav-inner {
-  background: rgba(20, 32, 26, 0.22);
+  background: rgba(15, 57, 10, 0.24);
   border-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -477,8 +485,8 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
    =================================================== */
 .process-head { text-align: center; margin-bottom: 72px; }
 .process-head .section-title { color: #E5DEC5; }
-.process-head .eyebrow { color: var(--accent); }
-.process-head .eyebrow::before { background: var(--accent); }
+.process-head .eyebrow { color: #D4C28A; }
+.process-head .eyebrow::before { background: #D4C28A; }
 .process-head p {
   color: rgba(234,223,201,.68); max-width: 560px; margin: 22px auto 0;
   font-size: 1rem; line-height: 1.72;
@@ -660,8 +668,9 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .contact { background: var(--bg-dark); color: #E5DEC5; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
 .contact-left .section-title { color: #E5DEC5; }
-.contact-left .eyebrow { color: var(--accent); }
-.contact-left .eyebrow::before { background: var(--accent); }
+.contact-left .section-title em { color: #D4C28A; }
+.contact-left .eyebrow { color: #D4C28A; }
+.contact-left .eyebrow::before { background: #D4C28A; }
 .contact-left > p {
   color: rgba(234,223,201,.62); font-size: 1rem; line-height: 1.72;
   margin: 28px 0 44px; max-width: 460px;

@@ -193,32 +193,34 @@ function autoswitch_customize_register( $wp_customize ) {
         'panel'    => 'autoswitch_panel',
         'priority' => 35,
     ) );
-    autoswitch_cz_text( $wp_customize, 'services_eyebrow', 'autoswitch_services', 'Eyebrow', 'Notre expertise' );
+    autoswitch_cz_text( $wp_customize, 'services_eyebrow', 'autoswitch_services', 'Eyebrow', 'Pourquoi Autoswitch' );
     autoswitch_cz_text(
         $wp_customize, 'services_title', 'autoswitch_services',
-        'Titre (HTML autorisé — <em>)',
-        'Un service <em>complet</em>, pas un simple dépôt-vente.',
+        'Titre (HTML autorisé — <em>, <br/>)',
+        'Six raisons de <em>nous confier</em><br/>la vente de votre voiture.',
         'textarea', 'wp_kses_post'
     );
     autoswitch_cz_text(
         $wp_customize, 'services_intro', 'autoswitch_services',
         'Intro',
-        "Autoswitch couvre l'intégralité de la chaîne de valeur d'une vente automobile. Six piliers, un seul interlocuteur, zéro contrainte pour vous.",
+        "Chaque carte = un bénéfice mesurable. Pas de promesse vague.",
         'textarea'
     );
     $services_defaults = array(
-        array( '01 — Estimation',     'Le juste prix, sans naïveté ni sous-cote.',          "Analyse croisée du marché, expertise terrain et connaissance des repreneurs. Vous savez exactement où vous vous situez." ),
-        array( '02 — Mise en valeur', 'Photos, description, diffusion ciblée.',             "Reportage photo soigné, annonce rédigée avec précision et diffusion sur les canaux qui attirent les bons acheteurs." ),
-        array( '03 — Négociation',    'Défendre votre prix avec méthode.',                  "Maîtrise des leviers de négociation du secteur. Votre marge reste protégée face aux tactiques classiques des acheteurs." ),
-        array( '04 — Démarches',      'Administratif de A à Z.',                            "Certificat de cession, carte grise, contrôle technique, Histovec. Tout est préparé, vérifié, transmis — vous ne signez qu'une fois." ),
-        array( '05 — Financement',    "Faciliter la décision d'achat.",                     "Nos partenaires bancaires proposent des solutions de financement à vos acheteurs — vous élargissez mécaniquement votre bassin." ),
-        array( '06 — Réseau',         "Un accès que Le Bon Coin ne donne pas.",             "Négociants, repreneurs pro, collectionneurs, marchands spécialisés — notre carnet d'adresses ouvre des portes invisibles aux particuliers." ),
+        array( '01 — Estimation',     'Le <em>juste prix.</em>',                     'Analyse marché + expertise terrain.',                     '2h',   'Estimation offerte'  ),
+        array( '02 — Mise en valeur', 'Photos pro. <em>Diffusion ciblée.</em>',      'Annonce soignée, sur les bons canaux.',                   '12',   'Canaux activés'      ),
+        array( '03 — Négociation',    'Marge <em>protégée.</em>',                    'Un négociateur défend votre prix. Pas vous.',             '+8%',  'Vs vente solo'       ),
+        array( '04 — Démarches',      '<em>Zéro</em> paperasse.',                    "Cession, carte grise, Histovec — on s'en charge.",        '1×',   'Une seule signature' ),
+        array( '05 — Financement',    'Acheteurs <em>solvables.</em>',               "Financement partenaire : votre bassin s'élargit.",         '3×',   'Bassin élargi'       ),
+        array( '06 — Réseau',         "Un <em>carnet d'adresses</em> privé.",        'Pros, collectionneurs, marchands.',                       '120+', 'Partenaires actifs'  ),
     );
     foreach ( $services_defaults as $i => $s ) {
         $n = $i + 1;
-        autoswitch_cz_text( $wp_customize, "service_{$n}_num",   'autoswitch_services', "Service {$n} — Numéro", $s[0] );
-        autoswitch_cz_text( $wp_customize, "service_{$n}_title", 'autoswitch_services', "Service {$n} — Titre",  $s[1] );
-        autoswitch_cz_text( $wp_customize, "service_{$n}_desc",  'autoswitch_services', "Service {$n} — Texte",  $s[2], 'textarea' );
+        autoswitch_cz_text( $wp_customize, "service_{$n}_num",      'autoswitch_services', "Service {$n} — Catégorie",      $s[0] );
+        autoswitch_cz_text( $wp_customize, "service_{$n}_title",    'autoswitch_services', "Service {$n} — Titre (em ok)",  $s[1], 'textarea', 'wp_kses_post' );
+        autoswitch_cz_text( $wp_customize, "service_{$n}_desc",     'autoswitch_services', "Service {$n} — Description",    $s[2], 'textarea' );
+        autoswitch_cz_text( $wp_customize, "service_{$n}_stat_num", 'autoswitch_services', "Service {$n} — Stat (chiffre)", $s[3] );
+        autoswitch_cz_text( $wp_customize, "service_{$n}_stat_lab", 'autoswitch_services', "Service {$n} — Stat (label)",   $s[4] );
     }
 
     /* =====================================================

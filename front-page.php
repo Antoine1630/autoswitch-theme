@@ -103,39 +103,55 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
+<!-- ===== SERVICES (Option B — cartes vertes signature) ===== -->
 <section class="section section--tight section--alt" id="services">
   <div class="container">
     <div class="services-head">
       <div class="reveal">
-        <div class="eyebrow"><?php echo esc_html( autoswitch_mod( 'services_eyebrow', 'Notre expertise' ) ); ?></div>
-        <h2 class="section-title"><?php echo wp_kses_post( autoswitch_mod( 'services_title', 'Un service <em>complet</em>, pas un simple dépôt-vente.' ) ); ?></h2>
+        <div class="eyebrow"><?php echo esc_html( autoswitch_mod( 'services_eyebrow', 'Pourquoi Autoswitch' ) ); ?></div>
+        <h2 class="section-title"><?php echo wp_kses_post( autoswitch_mod( 'services_title', 'Six raisons de <em>nous confier</em><br/>la vente de votre voiture.' ) ); ?></h2>
       </div>
-      <p class="reveal"><?php echo esc_html( autoswitch_mod( 'services_intro', "Autoswitch couvre l'intégralité de la chaîne de valeur d'une vente automobile. Six piliers, un seul interlocuteur, zéro contrainte pour vous." ) ); ?></p>
+      <p class="reveal"><?php echo esc_html( autoswitch_mod( 'services_intro', "Chaque carte = un bénéfice mesurable. Pas de promesse vague." ) ); ?></p>
     </div>
 
     <div class="services-grid">
       <?php
+      // Icônes SVG par service
+      $icons = array(
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/><path d="M9 6V4h6v2"/></svg>',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 6h18M3 18h12"/></svg>',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></svg>',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>',
+      );
+
       $services_defaults = array(
-          array( '01 — Estimation',     'Le juste prix, sans naïveté ni sous-cote.',          "Analyse croisée du marché, expertise terrain et connaissance des repreneurs. Vous savez exactement où vous vous situez." ),
-          array( '02 — Mise en valeur', 'Photos, description, diffusion ciblée.',             "Reportage photo soigné, annonce rédigée avec précision et diffusion sur les canaux qui attirent les bons acheteurs." ),
-          array( '03 — Négociation',    'Défendre votre prix avec méthode.',                  "Maîtrise des leviers de négociation du secteur. Votre marge reste protégée face aux tactiques classiques des acheteurs." ),
-          array( '04 — Démarches',      'Administratif de A à Z.',                            "Certificat de cession, carte grise, contrôle technique, Histovec. Tout est préparé, vérifié, transmis — vous ne signez qu'une fois." ),
-          array( '05 — Financement',    "Faciliter la décision d'achat.",                     "Nos partenaires bancaires proposent des solutions de financement à vos acheteurs — vous élargissez mécaniquement votre bassin." ),
-          array( '06 — Réseau',         "Un accès que Le Bon Coin ne donne pas.",             "Négociants, repreneurs pro, collectionneurs, marchands spécialisés — notre carnet d'adresses ouvre des portes invisibles aux particuliers." ),
+          array( '01 — Estimation',     'Le <em>juste prix.</em>',           'Analyse marché + expertise terrain.',                                       '2h',   'Estimation offerte' ),
+          array( '02 — Mise en valeur', 'Photos pro. <em>Diffusion ciblée.</em>',   'Annonce soignée, sur les bons canaux.',                              '12',   'Canaux activés'     ),
+          array( '03 — Négociation',    'Marge <em>protégée.</em>',          'Un négociateur défend votre prix. Pas vous.',                               '+8%',  'Vs vente solo'      ),
+          array( '04 — Démarches',      '<em>Zéro</em> paperasse.',          'Cession, carte grise, Histovec — on s\'en charge.',                         '1×',   'Une seule signature' ),
+          array( '05 — Financement',    'Acheteurs <em>solvables.</em>',     'Financement partenaire : votre bassin s\'élargit.',                         '3×',   'Bassin élargi'      ),
+          array( '06 — Réseau',         'Un <em>carnet d\'adresses</em> privé.', 'Pros, collectionneurs, marchands.',                                     '120+', 'Partenaires actifs' ),
       );
       foreach ( $services_defaults as $i => $s ) :
         $n = $i + 1;
-        $num   = autoswitch_mod( "service_{$n}_num",   $s[0] );
-        $title = autoswitch_mod( "service_{$n}_title", $s[1] );
-        $desc  = autoswitch_mod( "service_{$n}_desc",  $s[2] );
+        $num       = autoswitch_mod( "service_{$n}_num",       $s[0] );
+        $title     = autoswitch_mod( "service_{$n}_title",     $s[1] );
+        $desc      = autoswitch_mod( "service_{$n}_desc",      $s[2] );
+        $stat_num  = autoswitch_mod( "service_{$n}_stat_num",  $s[3] );
+        $stat_lab  = autoswitch_mod( "service_{$n}_stat_lab",  $s[4] );
       ?>
-        <div class="service">
-          <span class="service-num"><?php echo esc_html( $num ); ?></span>
-          <h3><?php echo esc_html( $title ); ?></h3>
-          <p><?php echo esc_html( $desc ); ?></p>
-          <span class="service-arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
+        <article class="service-card">
+          <div class="service-card-ico"><?php echo $icons[$i]; ?></div>
+          <div class="service-card-num"><?php echo esc_html( $num ); ?></div>
+          <h3 class="service-card-title"><?php echo wp_kses_post( $title ); ?></h3>
+          <p class="service-card-desc"><?php echo esc_html( $desc ); ?></p>
+          <div class="service-card-stat">
+            <span class="service-card-stat-num"><?php echo esc_html( $stat_num ); ?></span>
+            <span class="service-card-stat-lab"><?php echo esc_html( $stat_lab ); ?></span>
+          </div>
+        </article>
       <?php endforeach; ?>
     </div>
   </div>

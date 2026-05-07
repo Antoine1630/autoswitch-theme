@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.6.4
+Version: 1.7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -484,40 +484,74 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 }
 .services-head p { color: var(--ink-mid); font-size: 1rem; line-height: 1.72; max-width: 460px; }
 
+/* Cartes vertes signature (Option B) */
 .services-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--line);
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  gap: 14px;
+  background: transparent; border: 0;
 }
-.service {
-  background: var(--bg); padding: 44px 36px;
-  display: flex; flex-direction: column; min-height: 320px;
-  transition: background .4s var(--ease-out);
-  position: relative;
+.service-card {
+  background: #0F390A; color: var(--cream);
+  border-radius: 14px; padding: 38px 32px 32px;
+  position: relative; overflow: hidden; min-height: 320px;
+  display: flex; flex-direction: column;
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
 }
-.service:hover { background: var(--bg-alt); }
-.service-num {
-  font-family: 'Instrument Serif', serif; font-style: italic;
-  font-size: 1rem; color: var(--accent-text); margin-bottom: 28px; opacity: .85;
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 64px -20px rgba(15,57,10,.4);
 }
-.service h3 {
-  font-family: 'Instrument Serif', serif; font-weight: 400;
-  font-size: 1.55rem; letter-spacing: -.02em; margin-bottom: 14px;
-  line-height: 1.15;
+.service-card::before {
+  content: ''; position: absolute;
+  top: -100px; right: -100px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,194,138,.10), transparent 70%);
+  pointer-events: none;
+  transition: transform .8s var(--ease-out);
 }
-.service p {
-  font-size: .92rem; color: var(--ink-mid); line-height: 1.65;
-  margin-bottom: 24px; flex: 1;
-}
-.service-arrow {
-  align-self: flex-start; width: 36px; height: 36px;
-  border: 1px solid var(--line); border-radius: 50%;
+.service-card:hover::before { transform: scale(1.4); }
+
+.service-card-ico {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(229,222,197,.10);
+  border: 1px solid rgba(212,194,138,.32);
   display: flex; align-items: center; justify-content: center;
-  transition: all .35s var(--ease-out);
+  color: #D4C28A; margin-bottom: 28px;
+  position: relative; z-index: 1;
 }
-.service:hover .service-arrow {
-  background: var(--accent); border-color: var(--accent);
-  color: var(--white); transform: rotate(-45deg);
+.service-card-num {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: .85rem; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(212,194,138,.78); margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.service-card-title {
+  font-family: 'Instrument Serif', serif; font-weight: 400;
+  font-size: 1.7rem; line-height: 1.15; letter-spacing: -.015em;
+  color: var(--cream); margin-bottom: 14px;
+  position: relative; z-index: 1;
+}
+.service-card-title em {
+  color: #D4C28A !important; font-style: italic;
+}
+.service-card-desc {
+  color: rgba(229,222,197,.72); font-size: .92rem; line-height: 1.6;
+  position: relative; z-index: 1;
+}
+.service-card-stat {
+  margin-top: auto; padding-top: 22px;
+  border-top: 1px solid rgba(212,194,138,.18);
+  display: flex; align-items: baseline; gap: 10px;
+  position: relative; z-index: 1;
+}
+.service-card-stat-num {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: 2rem; line-height: 1; color: #D4C28A;
+  letter-spacing: -.02em;
+}
+.service-card-stat-lab {
+  font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(229,222,197,.65); font-weight: 500;
 }
 
 /* ===================================================

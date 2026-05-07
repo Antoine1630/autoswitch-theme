@@ -116,14 +116,20 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
 
     <div class="services-grid">
       <?php
-      // Icônes SVG par service
+      // Icônes SVG par service — Set A line-art éditorial 64px
       $icons = array(
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/><path d="M9 6V4h6v2"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 6h18M3 18h12"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>',
+        // 01 Estimation : balance romaine
+        '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"><path d="M32 8v48M16 16h32M10 32l6-16 6 16zM42 32l6-16 6 16z"/><path d="M6 32a10 10 0 0 0 20 0M38 32a10 10 0 0 0 20 0"/></svg>',
+        // 02 Mise en valeur : appareil photo
+        '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"><path d="M8 18h12l4-6h16l4 6h12v32H8z"/><circle cx="32" cy="32" r="10"/><circle cx="32" cy="32" r="3"/><circle cx="48" cy="22" r="1.5" fill="currentColor"/></svg>',
+        // 03 Négociation : poignée de main
+        '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"><path d="M4 24l8-4 6 4 14-2 6 6-12 4-4 4-6 2-12-6z"/><path d="M60 24l-8-4-6 4-6 8 6 6 4-4 6-2 8-4z"/><path d="M28 30l4-2 6 2"/></svg>',
+        // 04 Démarches : doc + coche
+        '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"><path d="M14 6h28l10 10v42H14z"/><path d="M42 6v10h10"/><path d="M22 32l6 6 14-14"/></svg>',
+        // 05 Financement : pièces empilées
+        '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"><ellipse cx="32" cy="14" rx="22" ry="6"/><path d="M10 14v8c0 3.3 9.85 6 22 6s22-2.7 22-6v-8M10 32v8c0 3.3 9.85 6 22 6s22-2.7 22-6v-8M10 50c0 3.3 9.85 6 22 6s22-2.7 22-6"/></svg>',
+        // 06 Réseau : nœuds connectés
+        '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"><circle cx="32" cy="14" r="6"/><circle cx="14" cy="44" r="6"/><circle cx="50" cy="44" r="6"/><circle cx="32" cy="40" r="4"/><path d="M32 20l-14 22M32 20l14 22M32 24v12M14 38l14-2M50 38l-14-2"/></svg>',
       );
 
       $services_defaults = array(

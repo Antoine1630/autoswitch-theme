@@ -133,8 +133,8 @@ function autoswitch_customize_register( $wp_customize ) {
     autoswitch_cz_text( $wp_customize, 'intro_eyebrow', 'autoswitch_intro', 'Eyebrow', 'À propos' );
     autoswitch_cz_text(
         $wp_customize, 'intro_title', 'autoswitch_intro',
-        'Titre (HTML autorisé — <em>, <br/>)',
-        'Votre <em>mandataire dédié</em>,<br/>de la mise en vente<br/>à la remise des clés.',
+        'Titre (HTML autorisé — <em>)',
+        'Votre <em>mandataire dédié</em>, de la mise en vente à la remise des clés.',
         'textarea', 'wp_kses_post'
     );
     autoswitch_cz_text(

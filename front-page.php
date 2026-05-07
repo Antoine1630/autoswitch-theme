@@ -70,7 +70,7 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
     <div class="intro-split">
       <div class="intro-text reveal">
         <div class="eyebrow"><?php echo esc_html( autoswitch_mod( 'intro_eyebrow', 'À propos' ) ); ?></div>
-        <h2><?php echo wp_kses_post( autoswitch_mod( 'intro_title', 'Votre <em>mandataire dédié</em>,<br/>de la mise en vente<br/>à la remise des clés.' ) ); ?></h2>
+        <h2><?php echo wp_kses_post( autoswitch_mod( 'intro_title', 'Votre <em>mandataire dédié</em>, de la mise en vente à la remise des clés.' ) ); ?></h2>
         <p class="intro-lede"><?php echo esc_html( autoswitch_mod( 'intro_p1', "Autoswitch est une agence pensée comme un service : vous nous confiez votre voiture, nous en tirons le meilleur." ) ); ?></p>
         <p><?php echo esc_html( autoswitch_mod( 'intro_p2', "Estimation, mise en valeur, diffusion, négociation, démarches administratives, financement — chaque étape est prise en charge par un expert unique." ) ); ?></p>
         <blockquote class="intro-pull"><?php echo esc_html( autoswitch_mod( 'intro_pull', 'Plus de perte de temps, plus de négociateurs douteux, plus de paperasse.' ) ); ?></blockquote>

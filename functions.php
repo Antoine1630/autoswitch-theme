@@ -129,7 +129,6 @@ function autoswitch_maintenance_gate() {
     if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) { return; }
     if ( defined( 'WP_CLI' ) && WP_CLI ) { return; }
     if ( $GLOBALS['pagenow'] === 'wp-login.php' ) { return; }
-    if ( isset( $_GET['_check'] ) && $_GET['_check'] === 'as2026verify' ) { return; }
 
     status_header( 503 );
     header( 'Retry-After: 3600' );

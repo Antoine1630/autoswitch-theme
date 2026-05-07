@@ -70,6 +70,15 @@ function autoswitch_scripts() {
         .contact-left .section-title em{color:#D4C28A!important;}
         .section--dark .eyebrow::before,
         .contact-left .eyebrow::before{background:#D4C28A!important;}
+        /* Cartes services vertes : verrouillage palette beige uniquement */
+        .service-card, .service-card *{color:#E5DEC5!important;}
+        .service-card .service-card-num{color:rgba(212,194,138,.78)!important;}
+        .service-card .service-card-title em,
+        .service-card .service-card-title strong,
+        .service-card .service-card-stat-num{color:#D4C28A!important;}
+        .service-card .service-card-desc{color:rgba(229,222,197,.72)!important;}
+        .service-card .service-card-stat-lab{color:rgba(229,222,197,.65)!important;}
+        .service-card svg{color:#D4C28A!important;}
     ';
     wp_add_inline_style( 'autoswitch-style', $inline_css );
 

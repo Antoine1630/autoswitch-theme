@@ -139,14 +139,26 @@ function autoswitch_customize_register( $wp_customize ) {
     );
     autoswitch_cz_text(
         $wp_customize, 'intro_p1', 'autoswitch_intro',
-        'Paragraphe 1',
-        "Autoswitch est une agence automobile pensée comme un service : vous nous confiez votre voiture, nous en tirons le meilleur. Évaluation, mise en valeur, diffusion, négociation, démarches administratives, financement — chaque étape est prise en charge par un expert unique.",
+        'Paragraphe 1 (lede, gras)',
+        "Autoswitch est une agence pensée comme un service : vous nous confiez votre voiture, nous en tirons le meilleur.",
         'textarea'
     );
     autoswitch_cz_text(
         $wp_customize, 'intro_p2', 'autoswitch_intro',
         'Paragraphe 2',
-        "Plus de perte de temps, plus de négociateurs douteux, plus de paperasse : juste une vente sereine, rapide et au juste prix.",
+        "Estimation, mise en valeur, diffusion, négociation, démarches administratives, financement — chaque étape est prise en charge par un expert unique.",
+        'textarea'
+    );
+    autoswitch_cz_text(
+        $wp_customize, 'intro_pull', 'autoswitch_intro',
+        'Citation (pull quote, italique vert)',
+        'Plus de perte de temps, plus de négociateurs douteux, plus de paperasse.',
+        'textarea'
+    );
+    autoswitch_cz_text(
+        $wp_customize, 'intro_p3', 'autoswitch_intro',
+        'Paragraphe 3 (clôture)',
+        "Juste une vente sereine, rapide, au juste prix.",
         'textarea'
     );
     autoswitch_cz_image( $wp_customize, 'intro_image',       'autoswitch_intro', 'Image (côté droit)' );

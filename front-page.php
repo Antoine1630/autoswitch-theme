@@ -64,36 +64,40 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
   </div>
 </header>
 
-<!-- ===== INTRO SPLIT ===== -->
+<!-- ===== INTRO SPLIT (B+3 asymétrique layered) ===== -->
 <section class="section" id="apropos">
   <div class="container">
     <div class="intro-split">
       <div class="intro-text reveal">
         <div class="eyebrow"><?php echo esc_html( autoswitch_mod( 'intro_eyebrow', 'À propos' ) ); ?></div>
         <h2><?php echo wp_kses_post( autoswitch_mod( 'intro_title', 'Votre <em>mandataire dédié</em>, de la mise en vente à la remise des clés.' ) ); ?></h2>
-        <p><?php echo esc_html( autoswitch_mod( 'intro_p1', "Autoswitch est une agence automobile pensée comme un service : vous nous confiez votre voiture, nous en tirons le meilleur. Évaluation, mise en valeur, diffusion, négociation, démarches administratives, financement — chaque étape est prise en charge par un expert unique." ) ); ?></p>
-        <p><?php echo esc_html( autoswitch_mod( 'intro_p2', "Plus de perte de temps, plus de négociateurs douteux, plus de paperasse : juste une vente sereine, rapide et au juste prix." ) ); ?></p>
-        <div class="stats">
-          <div class="stat-item">
-            <span class="num"><?php echo wp_kses_post( autoswitch_mod( 'stat_1_num', '+250' ) ); ?></span>
-            <span class="label"><?php echo esc_html( autoswitch_mod( 'stat_1_label', 'Véhicules vendus' ) ); ?></span>
-          </div>
-          <div class="stat-item">
-            <span class="num"><?php echo wp_kses_post( autoswitch_mod( 'stat_2_num', '21<span>j</span>' ) ); ?></span>
-            <span class="label"><?php echo esc_html( autoswitch_mod( 'stat_2_label', 'Délai moyen' ) ); ?></span>
-          </div>
-          <div class="stat-item">
-            <span class="num"><?php echo wp_kses_post( autoswitch_mod( 'stat_3_num', '96<span>%</span>' ) ); ?></span>
-            <span class="label"><?php echo esc_html( autoswitch_mod( 'stat_3_label', 'Satisfaction' ) ); ?></span>
-          </div>
+        <p class="intro-lede"><?php echo esc_html( autoswitch_mod( 'intro_p1', "Autoswitch est une agence pensée comme un service : vous nous confiez votre voiture, nous en tirons le meilleur." ) ); ?></p>
+        <p><?php echo esc_html( autoswitch_mod( 'intro_p2', "Estimation, mise en valeur, diffusion, négociation, démarches administratives, financement — chaque étape est prise en charge par un expert unique." ) ); ?></p>
+        <blockquote class="intro-pull"><?php echo esc_html( autoswitch_mod( 'intro_pull', 'Plus de perte de temps, plus de négociateurs douteux, plus de paperasse.' ) ); ?></blockquote>
+        <p><?php echo esc_html( autoswitch_mod( 'intro_p3', "Juste une vente sereine, rapide, au juste prix." ) ); ?></p>
+      </div>
+      <div class="intro-image-stack reveal">
+        <div class="intro-image">
+          <img src="<?php echo esc_url( autoswitch_image( 'intro_image', 'photos/intro.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Véhicule confié à Autoswitch', 'autoswitch' ); ?>" loading="lazy"/>
+        </div>
+        <div class="intro-signature-card">
+          <div class="intro-sign-q"><?php echo esc_html( autoswitch_mod( 'intro_label_strong', 'Une voiture mérite son acheteur.' ) ); ?></div>
+          <div class="intro-sign-a"><?php echo esc_html( autoswitch_mod( 'intro_label_text', 'Nous le trouvons pour vous.' ) ); ?></div>
         </div>
       </div>
-      <div class="intro-image reveal">
-        <img src="<?php echo esc_url( autoswitch_image( 'intro_image', 'photos/intro.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Véhicule confié à Autoswitch', 'autoswitch' ); ?>" loading="lazy"/>
-        <div class="intro-image-label">
-          <strong><?php echo esc_html( autoswitch_mod( 'intro_label_strong', 'Une voiture mérite son acheteur.' ) ); ?></strong>
-          <?php echo esc_html( autoswitch_mod( 'intro_label_text', 'Nous le trouvons pour vous.' ) ); ?>
-        </div>
+    </div>
+    <div class="intro-stats-band reveal" data-reveal-group>
+      <div class="stat-item">
+        <span class="num"><?php echo wp_kses_post( autoswitch_mod( 'stat_1_num', '+250' ) ); ?></span>
+        <span class="label"><?php echo esc_html( autoswitch_mod( 'stat_1_label', 'Véhicules vendus' ) ); ?></span>
+      </div>
+      <div class="stat-item">
+        <span class="num"><?php echo wp_kses_post( autoswitch_mod( 'stat_2_num', '21<span>j</span>' ) ); ?></span>
+        <span class="label"><?php echo esc_html( autoswitch_mod( 'stat_2_label', 'Délai moyen' ) ); ?></span>
+      </div>
+      <div class="stat-item">
+        <span class="num"><?php echo wp_kses_post( autoswitch_mod( 'stat_3_num', '96<span>%</span>' ) ); ?></span>
+        <span class="label"><?php echo esc_html( autoswitch_mod( 'stat_3_label', 'Satisfaction' ) ); ?></span>
       </div>
     </div>
   </div>

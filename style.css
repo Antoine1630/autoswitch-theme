@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.5.2
+Version: 1.6.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -384,51 +384,91 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .brand-strip-items { display: flex; gap: 42px; flex-wrap: wrap; }
 
 /* ===================================================
-   INTRO SPLIT
+   INTRO SPLIT — B+3 asymétrique layered
    =================================================== */
-.intro-split { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; }
+.intro-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 96px;
+  align-items: start; position: relative;
+}
+.intro-text { padding-top: 12px; }
 .intro-text h2 {
   font-family: 'Instrument Serif', serif; font-weight: 400;
-  font-size: var(--fs-h2); line-height: 1.04; letter-spacing: -.025em;
-  margin-bottom: 28px;
+  font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.1; letter-spacing: -.02em;
+  margin-bottom: 38px; max-width: 14ch;
 }
-.intro-text p { color: var(--ink-mid); font-size: 1.01rem; line-height: 1.72; margin-bottom: 20px; max-width: 520px; }
+.intro-lede {
+  color: var(--ink) !important;
+  font-size: 1.08rem !important; line-height: 1.75 !important; font-weight: 400 !important;
+  margin-bottom: 28px !important; max-width: 50ch !important; letter-spacing: -.005em;
+}
+.intro-text p {
+  color: var(--ink-mid); font-size: .98rem; line-height: 1.85;
+  margin-bottom: 24px; max-width: 50ch;
+}
+.intro-pull {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-weight: 400; font-size: 1.4rem; line-height: 1.4;
+  color: var(--accent);
+  padding: 26px 0 26px 28px; border-left: 2px solid var(--accent);
+  margin: 36px 0; max-width: 42ch;
+}
 
-.stats {
-  display: flex; gap: 48px; margin-top: 48px;
-  padding-top: 36px; border-top: 1px solid var(--line);
+/* Image stack — image en relief avec un fond beige décalé */
+.intro-image-stack { position: relative; padding: 20px 20px 80px 0; }
+.intro-image-stack::before {
+  content: ''; position: absolute; inset: 0 0 60px 40px;
+  background: var(--bg-alt); border-radius: 6px; z-index: 0;
 }
-.stat-item .num {
-  font-family: 'Instrument Serif', serif;
-  font-size: 2.6rem; font-weight: 400;
-  letter-spacing: -.025em; color: var(--ink);
-  line-height: 1; display: block;
-}
-.stat-item .num span { color: var(--accent-text); font-style: italic; }
-.stat-item .label {
-  font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--ink-light); margin-top: 10px; display: block;
-}
-
 .intro-image {
-  position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: var(--r-md);
+  position: relative; z-index: 1;
+  aspect-ratio: 4/5; overflow: hidden; border-radius: 6px;
 }
 .intro-image img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 1.2s var(--ease-out);
 }
 .intro-image:hover img { transform: scale(1.05); }
-.intro-image-label {
-  position: absolute; bottom: 20px; left: 20px;
-  background: rgba(244,240,226,.95); backdrop-filter: blur(10px);
-  padding: 14px 18px; border-radius: var(--r-sm);
-  font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink);
+
+/* Carte signature verte qui chevauche en bas-gauche */
+.intro-signature-card {
+  position: absolute; left: -40px; bottom: 0; z-index: 2;
+  background: var(--accent); color: #E5DEC5;
+  padding: 28px 32px; border-radius: 8px;
+  max-width: 330px;
+  box-shadow: 0 28px 60px rgba(15,57,10,.32),
+              0 8px 16px rgba(15,57,10,.18);
 }
-.intro-image-label strong {
-  display: block; font-family: 'Instrument Serif', serif;
-  font-style: italic; font-weight: 400; font-size: 1.05rem;
-  letter-spacing: -.01em; text-transform: none; color: var(--accent-text);
-  margin-bottom: 2px;
+.intro-sign-q {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: 1.28rem; line-height: 1.35; color: #D4C28A; margin-bottom: 12px;
+  font-weight: 400;
+}
+.intro-sign-a {
+  font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(229,222,197,.7); font-weight: 600;
+}
+
+/* Stats — bande détachée pleine largeur */
+.intro-stats-band {
+  margin-top: 40px; padding: 56px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px;
+}
+/* Stats héritées (au cas où) */
+.stats {
+  display: flex; gap: 48px; margin-top: 48px;
+  padding-top: 36px; border-top: 1px solid var(--line);
+}
+.stat-item .num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 3.2rem; font-weight: 400;
+  letter-spacing: -.025em; color: var(--ink);
+  line-height: 1; display: block;
+}
+.stat-item .num span { color: var(--accent-text); font-style: italic; }
+.stat-item .label {
+  font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-light); margin-top: 14px; display: block; font-weight: 500;
 }
 
 /* ===================================================
@@ -974,6 +1014,11 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
     grid-template-columns: 1fr; gap: 44px;
   }
   .intro-text .stats { gap: 28px; flex-wrap: wrap; }
+  .intro-stats-band { grid-template-columns: 1fr; gap: 32px; }
+  .intro-image-stack { padding: 0; }
+  .intro-image-stack::before { display: none; }
+  .intro-signature-card { left: 16px; right: 16px; max-width: none; padding: 22px 24px; }
+  .intro-pull { font-size: 1.15rem; padding-left: 22px; margin: 28px 0; }
   .services-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   .form-card { padding: 30px 22px; }

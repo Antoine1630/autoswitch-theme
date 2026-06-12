@@ -150,13 +150,12 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
       ?>
         <article class="service-card">
           <div class="service-card-ico"><?php echo $icons[$i]; ?></div>
-          <div class="service-card-num"><?php echo esc_html( $num ); ?></div>
-          <h3 class="service-card-title"><?php echo wp_kses_post( $title ); ?></h3>
-          <p class="service-card-desc"><?php echo esc_html( $desc ); ?></p>
-          <div class="service-card-stat">
-            <span class="service-card-stat-num"><?php echo esc_html( $stat_num ); ?></span>
-            <span class="service-card-stat-lab"><?php echo esc_html( $stat_lab ); ?></span>
+          <div class="service-card-heading">
+            <span class="service-card-num"><?php echo esc_html( $num ); ?></span>
+            <h3 class="service-card-title"><?php echo wp_kses_post( $title ); ?></h3>
           </div>
+          <div class="service-card-sep"></div>
+          <p class="service-card-desc"><?php echo nl2br( esc_html( $desc ) ); ?></p>
         </article>
       <?php endforeach; ?>
     </div>
@@ -259,42 +258,7 @@ $strip_count  = autoswitch_mod( 'brand_strip_count', '01 / 07' );
   </div>
 </section>
 
-<!-- ===== GALLERY ===== -->
-<section class="section section--tight section--alt" id="galerie">
-  <div class="container">
-    <div class="gallery-head reveal">
-      <div>
-        <div class="eyebrow"><?php echo esc_html( autoswitch_mod( 'gallery_eyebrow', 'Galerie' ) ); ?></div>
-        <h2 class="section-title"><?php echo wp_kses_post( autoswitch_mod( 'gallery_title', 'Quelques-uns des véhicules<br/>confiés à <em>Autoswitch.</em>' ) ); ?></h2>
-      </div>
-      <span class="mono-tag"><?php echo esc_html( autoswitch_mod( 'gallery_tag', 'Sélection récente — 2025' ) ); ?></span>
-    </div>
-  </div>
-  <div class="container">
-    <div class="gallery-scroll">
-      <?php
-      $gallery_defaults = array(
-          array( 'photos/gallery-01.jpg', 'Ferrari Purosangue',  'V12 — 2024' ),
-          array( 'photos/gallery-02.jpg', 'Porsche GT3 RS',      'Édition 2024' ),
-          array( 'photos/gallery-03.jpg', 'Prestige sur-mesure', 'Cannes — 2024' ),
-          array( 'photos/gallery-04.jpg', 'Détail mécanique',    'Full service historique' ),
-          array( 'photos/gallery-05.jpg', 'Finition premium',    'Intérieur conservé' ),
-          array( 'photos/gallery-06.jpg', 'Exposition face',     'Mise en valeur' ),
-      );
-      foreach ( $gallery_defaults as $i => $g ) :
-        $n   = $i + 1;
-        $img = autoswitch_image( "gallery_{$n}_image", $g[0] );
-        $ttl = autoswitch_mod( "gallery_{$n}_title", $g[1] );
-        $sub = autoswitch_mod( "gallery_{$n}_sub",   $g[2] );
-      ?>
-        <div class="gallery-item">
-          <div class="gallery-img"><img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $ttl ); ?>" loading="lazy"/></div>
-          <div class="gallery-caption"><strong><?php echo esc_html( $ttl ); ?></strong><span><?php echo esc_html( $sub ); ?></span></div>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+<!-- ===== GALLERY (retirée à la demande — juin 2026) ===== -->
 
 <!-- ===== TESTIMONIALS ===== -->
 <section class="section">

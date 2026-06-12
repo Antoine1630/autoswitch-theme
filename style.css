@@ -4,7 +4,7 @@ Theme URI: https://autoswitch.fr
 Author: Autoswitch
 Author URI: https://autoswitch.fr
 Description: Thème éditorial pour Autoswitch — Agence Automobile. Design moderne, palette crème chaleureuse, typographie 2026, animations raffinées.
-Version: 1.7.4
+Version: 1.7.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: autoswitch
@@ -515,44 +515,37 @@ h1 em, h2 em, h3 em, .section-title em, .cta-band em {
 .service-card-ico {
   width: 64px; height: 64px;
   display: flex; align-items: center; justify-content: center;
-  color: #D4C28A; margin-bottom: 28px;
+  color: #D4C28A; margin-bottom: 24px;
   position: relative; z-index: 1;
 }
 .service-card-ico svg { width: 100%; height: 100%; }
-.service-card-num {
-  font-family: 'Instrument Serif', serif; font-style: italic;
-  font-size: .85rem; letter-spacing: .14em; text-transform: uppercase;
-  color: rgba(212,194,138,.78); margin-bottom: 12px;
+.service-card-heading {
+  margin-bottom: 14px;
   position: relative; z-index: 1;
+}
+.service-card-num {
+  display: block;
+  font-family: 'Inter', sans-serif; font-style: normal; font-weight: 500;
+  font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(212,194,138,.45); margin-bottom: 7px;
 }
 .service-card-title {
   font-family: 'Instrument Serif', serif; font-weight: 400;
-  font-size: 1.7rem; line-height: 1.15; letter-spacing: -.015em;
-  color: var(--cream); margin-bottom: 14px;
-  position: relative; z-index: 1;
+  font-size: 1.75rem; line-height: 1.15; letter-spacing: -.018em;
+  color: var(--cream);
 }
-.service-card-title em {
-  color: #D4C28A !important; font-style: italic;
+.service-card-title em { color: var(--cream); font-style: normal; }
+.service-card-sep {
+  width: 28px; height: 1px;
+  background: rgba(212,194,138,.3);
+  margin-bottom: 14px;
+  position: relative; z-index: 1;
 }
 .service-card-desc {
-  color: rgba(229,222,197,.72); font-size: .92rem; line-height: 1.6;
+  color: rgba(229,222,197,.68); font-size: .92rem; line-height: 1.65;
   position: relative; z-index: 1;
 }
-.service-card-stat {
-  margin-top: auto; padding-top: 22px;
-  border-top: 1px solid rgba(212,194,138,.18);
-  display: flex; align-items: baseline; gap: 10px;
-  position: relative; z-index: 1;
-}
-.service-card-stat-num {
-  font-family: 'Instrument Serif', serif; font-style: italic;
-  font-size: 2rem; line-height: 1; color: #D4C28A;
-  letter-spacing: -.02em;
-}
-.service-card-stat-lab {
-  font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(229,222,197,.65); font-weight: 500;
-}
+.service-card-stat { display: none; }
 
 /* ===================================================
    PROCESS

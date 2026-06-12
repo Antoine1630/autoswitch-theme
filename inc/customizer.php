@@ -291,35 +291,8 @@ function autoswitch_customize_register( $wp_customize ) {
     autoswitch_cz_text( $wp_customize, 'feature_cta_url',   'autoswitch_feature', 'Bouton — URL',     '#contact', 'text', 'esc_url_raw' );
 
     /* =====================================================
-     * SECTION : Galerie (6 items)
+     * SECTION : Galerie — retirée juin 2026
      * ===================================================== */
-    $wp_customize->add_section( 'autoswitch_gallery', array(
-        'title'    => __( '⑨ Galerie', 'autoswitch' ),
-        'panel'    => 'autoswitch_panel',
-        'priority' => 50,
-    ) );
-    autoswitch_cz_text( $wp_customize, 'gallery_eyebrow', 'autoswitch_gallery', 'Eyebrow', 'Galerie' );
-    autoswitch_cz_text(
-        $wp_customize, 'gallery_title', 'autoswitch_gallery',
-        'Titre (HTML autorisé — <em>, <br/>)',
-        'Quelques-uns des véhicules<br/>confiés à <em>Autoswitch.</em>',
-        'textarea', 'wp_kses_post'
-    );
-    autoswitch_cz_text( $wp_customize, 'gallery_tag', 'autoswitch_gallery', 'Tag (mono)', 'Sélection récente — 2025' );
-    $gallery_defaults = array(
-        array( 'car-01.jpg', 'Ferrari Purosangue', 'V12 — 2024' ),
-        array( 'car-02.jpg', 'Grand tourisme',     'Édition 2024' ),
-        array( 'car-03.jpg', 'Profil éditorial',   'Shooting studio' ),
-        array( 'car-04.jpg', 'Détail mécanique',   'Full service historique' ),
-        array( 'car-05.jpg', 'Finition premium',   'Intérieur conservé' ),
-        array( 'detail.jpg', 'Exposition face',    'Mise en valeur' ),
-    );
-    foreach ( $gallery_defaults as $i => $g ) {
-        $n = $i + 1;
-        autoswitch_cz_image( $wp_customize, "gallery_{$n}_image", 'autoswitch_gallery', "Image {$n}" );
-        autoswitch_cz_text( $wp_customize, "gallery_{$n}_title",  'autoswitch_gallery', "Image {$n} — Titre",     $g[1] );
-        autoswitch_cz_text( $wp_customize, "gallery_{$n}_sub",    'autoswitch_gallery', "Image {$n} — Sous-titre", $g[2] );
-    }
 
     /* =====================================================
      * SECTION : Avis clients (3 items)

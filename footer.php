@@ -33,7 +33,7 @@ $email     = autoswitch_mod( 'email', 'contact@autoswitch.ch' );
             <li><a href="<?php echo esc_url( home_url( '/#apropos' ) ); ?>">À propos</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#services' ) ); ?>">Expertise</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#processus' ) ); ?>">Processus</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#galerie' ) ); ?>">Galerie</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/financement/' ) ); ?>">Financement</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>">FAQ</a></li>
           </ul>
         <?php endif; ?>
@@ -55,7 +55,7 @@ $email     = autoswitch_mod( 'email', 'contact@autoswitch.ch' );
               array( 'Politique de confidentialité', '#' ),
               array( 'CGV',                          '#' ),
               array( 'Cookies',                      '#' ),
-          );
+         );
           foreach ( $legal_defaults as $i => $l ) :
             $n     = $i + 1;
             $label = autoswitch_mod( "footer_legal_{$n}_label", $l[0] );
@@ -68,7 +68,7 @@ $email     = autoswitch_mod( 'email', 'contact@autoswitch.ch' );
     </div>
     <div class="foot-bottom">
       <span>© <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> — Agence automobile. Tous droits réservés.</span>
-      <span><?php echo esc_html( autoswitch_mod( 'footer_bottom', 'Site conçu avec soin ·' ) ); ?></span>
+      <span><?php echo esc_html( autoswitch_mod( 'footer_bottom', 'Site conçu avec soin ·' ) ); ?></pan>
     </div>
   </div>
 </footer>

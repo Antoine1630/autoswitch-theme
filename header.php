@@ -45,7 +45,7 @@ $is_front = is_front_page();
         <li><a class="nav-link" href="<?php echo esc_url( home_url( '/#apropos' ) ); ?>">À propos</a></li>
         <li><a class="nav-link" href="<?php echo esc_url( home_url( '/#services' ) ); ?>">Expertise</a></li>
         <li><a class="nav-link" href="<?php echo esc_url( home_url( '/#processus' ) ); ?>">Processus</a></li>
-        <li><a class="nav-link" href="<?php echo esc_url( home_url( '/#galerie' ) ); ?>">Galerie</a></li>
+        <li><a class="nav-link" href="<?php echo esc_url( home_url( '/financement/' ) ); ?>">Financement</a></li>
         <li><a class="nav-link" href="<?php echo esc_url( home_url( '/#faq' ) ); ?>">FAQ</a></li>
       </ul>
     <?php endif; ?>
@@ -62,7 +62,7 @@ $is_front = is_front_page();
   <a href="<?php echo esc_url( home_url( '/#apropos' ) ); ?>" class="ml">À propos</a>
   <a href="<?php echo esc_url( home_url( '/#services' ) ); ?>" class="ml">Expertise</a>
   <a href="<?php echo esc_url( home_url( '/#processus' ) ); ?>" class="ml">Processus</a>
-  <a href="<?php echo esc_url( home_url( '/#galerie' ) ); ?>" class="ml">Galerie</a>
+  <a href="<?php echo esc_url( home_url( '/financement/' ) ); ?>" class="ml">Financement</a>
   <a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" class="ml">FAQ</a>
   <a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>" class="ml">Contact</a>
 </div>

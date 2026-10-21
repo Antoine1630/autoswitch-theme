@@ -191,4 +191,4 @@ function autoswitch_maintenance_gate() {
     <?php
     exit;
 }
-add_action( 'template_redirect', 'autoswitch_maintenance_gate' );
+// add_action( 'template_redirect', 'autoswitch_maintenance_gate' );

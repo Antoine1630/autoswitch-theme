@@ -111,10 +111,10 @@
     splitWords(heroTitle);
     // Trigger on next frame so the transition actually animates.
     requestAnimationFrame(function () {
-      requestAnimationFrame(function () { heroTitle.classList.add('is-in'); });
+      requestAnimationFrame(function () { heroTitle.classList.add('in'); });
     });
   } else if (heroTitle) {
-    heroTitle.classList.add('is-in');
+    heroTitle.classList.add('in');
   }
 
   // ===== Tag stagger groups automatically =====
